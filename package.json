@@ -1,6 +1,6 @@
 {
   "name": "zod-props",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A powerful and easy-to-use higher-order React component for runtime prop validation, powered by Zod",
   "main": "dist/zod-props.cjs.js",
   "module": "dist/zod-props.esm.js",
