@@ -39,10 +39,9 @@
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged",
-    "pre-push": "yarn run lint",
     "post-merge": "yarn"
   },
   "lint-staged": {
-    "*.{js,jsx}": "eslint --fix"
+    "*.{js,jsx}": "yarn lint:fix"
   }
 }
