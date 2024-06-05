@@ -1,0 +1,48 @@
+{
+  "name": "zod-props",
+  "version": "1.0.0",
+  "description": "A powerful and easy-to-use higher-order React component for runtime prop validation, powered by Zod",
+  "main": "dist/zod-props.cjs.js",
+  "module": "dist/zod-props.esm.js",
+  "scripts": {
+    "build": "yarn lint:fix && preconstruct build",
+    "release": "yarn build && npm publish --access public",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "yarn run lint --fix"
+  },
+  "keywords": [],
+  "author": "Pablo Najera <pablo@najera.co>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zod": "^3.23.8",
+    "zod-validation-error": "^3.3.0"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.22.5",
+    "@preconstruct/cli": "^2.8.1",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.1",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-config-airbnb-typescript": "^17.1.0",
+    "eslint-config-standard-with-typescript": "^37.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+    "eslint-plugin-promise": "^6.0.0",
+    "lint-staged": "^13.2.3",
+    "simple-git-hooks": "^2.9.0",
+    "typescript": "^5.4.5"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged",
+    "pre-push": "yarn run format",
+    "post-merge": "yarn"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": "eslint --fix"
+  }
+}

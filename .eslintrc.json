@@ -1,0 +1,23 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "airbnb-base",
+    "airbnb-typescript/base",
+    "standard-with-typescript"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "rules": {
+    "import/no-anonymous-default-export": "off",
+    "prefer-destructuring": ["error", { "object": true, "array": false }],
+    "prefer-template": "error",
+    "prefer-const": "error",
+    "require-atomic-updates": "error",
+    "no-return-await": "off",
+    "import/prefer-default-export": "off",
+    "no-console": "error"
+  }
+}
