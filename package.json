@@ -10,6 +10,10 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "yarn run lint --fix"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pablonajera/zod-props"
+  },
   "keywords": [],
   "author": "Pablo Najera <pablo@najera.co>",
   "license": "MIT",
