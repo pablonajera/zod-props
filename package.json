@@ -10,7 +10,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "yarn run lint --fix",
     "test": "jest",
-    "test:ci": "jest --ci --reporters='default' --reporters='./tests/infra/githubActionsReporter'"
+    "test:ci": "jest --ci --reporters='default' --reporters='./src/__tests__/infra/githubActionsReporter'"
   },
   "repository": {
     "type": "git",
