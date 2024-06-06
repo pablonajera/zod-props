@@ -1,37 +1,37 @@
-/*eslint-disable*/
-export class GithubActionsReporter {
-  constructor(globalConfig, options) {
-    this._globalConfig = globalConfig;
-    this._options = options;
+/* eslint-disable */
+class GithubActionsReporter {
+  constructor (globalConfig, options) {
+    this._globalConfig = globalConfig
+    this._options = options
   }
 
-  onRunComplete(contexts, results) {
+  onRunComplete (contexts, results) {
     for (const testResultItem of results.testResults) {
-      const { testFilePath } = testResultItem;
+      const { testFilePath } = testResultItem
 
       for (const result of testResultItem.testResults) {
-        if (result.status !== "failed") {
-          continue;
+        if (result.status !== 'failed') {
+          continue
         }
 
         for (const failureMessages of result.failureMessages) {
-          const newLine = "%0A";
-          const message = failureMessages.replace(/\n/g, newLine);
-          const captureGroup = message.match(/:(\d+):(\d+)/);
+          const newLine = '%0A'
+          const message = failureMessages.replace(/\n/g, newLine)
+          const captureGroup = message.match(/:(\d+):(\d+)/)
 
           if (!captureGroup) {
-            console.log("Unable to extract line number from call stack");
-            continue;
+            console.log('Unable to extract line number from call stack')
+            continue
           }
 
-          const [, line, col] = captureGroup;
+          const [, line, col] = captureGroup
           console.log(
             `::error file=${testFilePath},line=${line},col=${col}::${message}`
-          );
+          )
         }
       }
     }
   }
 }
 
-export default GithubActionsReporter;
+module.exports = GithubActionsReporter
