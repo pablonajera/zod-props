@@ -9,7 +9,8 @@
     "release": "yarn build && npm publish --access public",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "yarn run lint --fix",
-    "test": "jest"
+    "test": "jest",
+    "test:ci": "jest --ci --reporters='default' --reporters='./tests/infra/githubActionsReporter'"
   },
   "repository": {
     "type": "git",
